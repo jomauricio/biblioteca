@@ -1,0 +1,18 @@
+{% extends 'livros/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<p>Cadastrar livro</p>
+
+<form method="POST" class="form">
+    {% csrf_token %}
+        
+    {% bootstrap_form form layout='inline'%}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">
+        Cadastrar
+    </button>
+    {% endbuttons %}
+    
+</form>
+{% endblock content %}

@@ -10,4 +10,8 @@ class Livros(models.Model):
     data_cadastro = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return self.nome
+        return self.titulo
+
+    class Meta:
+        verbose_name_plural = 'Livros'
+    #     verbose_name = 'Revista'

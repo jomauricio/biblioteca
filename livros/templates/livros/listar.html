@@ -1,0 +1,23 @@
+{% extends 'livros/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h5>Livro cadastrados</h5>
+<div>
+    <ul class='task-list'>
+        {%for livro in livros%}
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/livros/{{livro.id}}">{{livro.titulo}}</a>
+                <span class="badge bg-primary rounded-pill">Quant.: {{livro.quantidade}}</span>
+                
+                <a href='/livros/atualizar/{{livro.id}}' style='text-decoration:none;'>Editar</a></i>
+                
+                <a href='/livros/deletar/{{livro.id}}' style='text-decoration:none;'>Deletar</a></i>     
+            </li>
+        </ul>
+        {%endfor%}
+    </ul>
+</div>
+
+{% endblock content %}
